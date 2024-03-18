@@ -6,6 +6,7 @@ import type { ButtonInstance } from './components/Button/types';
 import { ref ,onMounted} from 'vue';
 
 const buttonRef = ref<ButtonInstance | null>(null)
+const openedValue = ref(['a'])
 onMounted(()=>{
   
   if(buttonRef.value){
@@ -43,7 +44,7 @@ onMounted(()=>{
     <Button size="large" icon="arrow-up">Icon</Button><br/><br/>    
 
 
-    <Collapse >
+    <Collapse v-model="openedValue" accordion>
       <Item name="a" title="Title A">
         <h1>headline title</h1>
         <div> this is content a aaa </div>
@@ -54,6 +55,7 @@ onMounted(()=>{
       <Item name="c" title="Disabled Title" disabled>
         <div> this is cccc test </div>
       </Item>
+      {{ openedValue }}
     </Collapse>
 
   </main>
