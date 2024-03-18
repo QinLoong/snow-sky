@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import Button from './components/Button/Button.vue';
+import Collapse from './components/Collapse/Collapse.vue';
+import Item from './components/Collapse/CollapseItem.vue';
 import type { ButtonInstance } from './components/Button/types';
 import { ref ,onMounted} from 'vue';
 
@@ -39,7 +41,24 @@ onMounted(()=>{
     <Button type="success"  size="small">Small</Button><br/><br/>
     <Button size="large" loading>Loading</Button>
     <Button size="large" icon="arrow-up">Icon</Button><br/><br/>    
+
+
+    <Collapse >
+      <Item name="a" title="Title A">
+        <h1>headline title</h1>
+        <div> this is content a aaa </div>
+      </Item>
+      <Item name="b" title="Title B">
+        <div> this is bbbbb test </div>
+      </Item>
+      <Item name="c" title="Disabled Title" disabled>
+        <div> this is cccc test </div>
+      </Item>
+    </Collapse>
+
   </main>
+
+ 
   <a href="#">the link</a>
 </template>
 
