@@ -9,12 +9,15 @@
     'is-plain':plain,
     'is-round':round,
     'is-circle':circle,
-    'is-disabled':disabled
+    'is-disabled':disabled,
+    'is-loading': loading
   }"
-  :disabled="disabled"
+  :disabled="disabled || loading"
   :autofocus="autofocus"
   :type="nativeType"
   >
+  <Icon icon="spinner" spin v-if="loading"></Icon>
+  <Icon :icon="icon" v-if="icon"></Icon>
   <span>
     <slot/>
   </span>
@@ -22,6 +25,7 @@
 </template>
 
 <script setup lang="ts" name="VkButton">
+import Icon from '../Icon/icon.vue'
 import { ref } from 'vue';
 import type { ButtonProps } from './types';
 
