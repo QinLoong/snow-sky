@@ -2,10 +2,10 @@
 <template>
   <button
   ref="_ref"
-  class="vk-button"
+  class="snow-button"
   :class="{
-    [`vk-button--${type}`]:type,
-    [`vk-button--${size}`]: size,
+    [`snow-button--${type}`]:type,
+    [`snow-button--${size}`]: size,
     'is-plain':plain,
     'is-round':round,
     'is-circle':circle,
@@ -24,13 +24,13 @@
   </button>
 </template>
 
-<script setup lang="ts" name="VkButton">
-import Icon from '../Icon/icon.vue'
+<script setup lang="ts" name="SnowButton">
+import Icon from '../Icon/Icon.vue'
 import { ref } from 'vue';
 import type { ButtonProps } from './types';
 
 defineOptions({
-  name: 'VkButton'
+  name: 'SnowButton'
 })
 withDefaults(defineProps<ButtonProps>(),{
   nativeType:'button'
@@ -45,7 +45,7 @@ defineExpose({
 
 
 <style>
- .vk-button {
+ .snow-button {
   --main-bg-color: red;
   background-color: var(--main-bg-color);
  }

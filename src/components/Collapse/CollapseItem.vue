@@ -1,12 +1,12 @@
 <template>
   <div
-    class="vk-collapse-item"
+    class="snow-collapse-item"
     :class="{
       'is-disabled': disabled,
     }"
   >
     <div
-      class="vk-collapse-item__header"
+      class="snow-collapse-item__header"
       :id="`item-header-${name}`"
       @click="handleClick"
       :class="{
@@ -18,8 +18,8 @@
       <Icon icon="angle-right" class="header-angle" />
     </div>
     <Transition name="slide" v-on="transitionEvents">
-    <div class="vk-collapse-item__wrapper" v-show="isActive">
-      <div class="vk-collapse-item__content" :id="`item-content-${name}`">
+    <div class="snow-collapse-item__wrapper" v-show="isActive">
+      <div class="snow-collapse-item__content" :id="`item-content-${name}`">
         <slot/>
       </div>
     </div>
@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import Icon from "../Icon/icon.vue";
+import Icon from "../Icon/Icon.vue";
 import { CollapseItemProps, collapseContextKey } from "./types";
 import { inject, computed } from "vue";
 defineOptions({
@@ -73,7 +73,7 @@ const transitionEvents: Record<string,(el:HTMLElement) => void> ={
 </script>
 
 <style scoped>
-.vk-collapse-item__header {
+.snow-collapse-item__header {
   font-size: 30px;
 }
 </style>

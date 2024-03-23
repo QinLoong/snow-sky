@@ -1,27 +1,49 @@
 <script setup lang="ts">
+import { createPopper, right } from '@popperjs/core';
+import type { Instance } from '@popperjs/core';
 import Button from './components/Button/Button.vue';
 import Collapse from './components/Collapse/Collapse.vue';
+import Tooltip from'./components/Tooltips/Tooltip.vue';
 import Item from './components/Collapse/CollapseItem.vue';
-import Icon from './components/Icon/icon.vue';
+import Icon from './components/Icon/Icon.vue';
 import type { ButtonInstance } from './components/Button/types';
 import { ref ,onMounted} from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+let popperInstance : Instance | null = null
+
 const buttonRef = ref<ButtonInstance | null>(null)
 const openedValue = ref(['a'])
+const overlayNode = ref<HTMLElement>()
+const triggerNode = ref<HTMLElement>()
 onMounted(()=>{
   
   if(buttonRef.value){
     console.log('buttonRef',buttonRef.value.ref);
   }
-
+ if(overlayNode.value&& triggerNode.value){
+  popperInstance =  createPopper(triggerNode.value,overlayNode.value,{
+    placement:right
+  })
+ }
   
+
+  setTimeout(()=>{
+    popperInstance?.setOptions({placement:'bottom'})
+  },2000)
 })
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <Tooltip trigger="hover" placement="right">
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" ref="triggerNode"/>
+    <template #content>
+      <div>
+        sadaffsa
+      </div>
+    </template>
+    </Tooltip>
   </header>
   <Icon icon="arrow-up" size="2xl"  type="danger" color="#0e7a0d" />
   <main>
@@ -78,7 +100,7 @@ header {
   display: block;
   border: 1px solid green;
 }
-.vk-tooltip__popper {
+.snow-tooltip__popper {
   border: 1px solid red;
 }
 

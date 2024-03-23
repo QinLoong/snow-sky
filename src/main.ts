@@ -9,5 +9,5 @@ import App2 from './App2.vue'
 library.add(fas)
 import './styles/index.css'
 
-createApp(App2)
+createApp(App)
 .mount('#app')

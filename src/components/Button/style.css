@@ -1,21 +1,21 @@
-.vk-button {
-  --vk-button-font-weight: var(--vk-font-weight-primary);
-  --vk-button-border-color: var(--vk-border-color);
-  --vk-button-bg-color: var(--vk-fill-color-blank);
-  --vk-button-text-color: var(--vk-text-color-regular);
-  --vk-button-disabled-text-color: var(--vk-disabled-text-color);
-  --vk-button-disabled-bg-color: var(--vk-fill-color-blank);
-  --vk-button-disabled-border-color: var(--vk-border-color-light);
-  --vk-button-hover-text-color: var(--vk-color-primary);
-  --vk-button-hover-bg-color: var(--vk-color-primary-light-9);
-  --vk-button-hover-border-color: var(--vk-color-primary-light-7);
-  --vk-button-active-text-color: var(--vk-button-hover-text-color);
-  --vk-button-active-border-color: var(--vk-color-primary);
-  --vk-button-active-bg-color: var(--vk-button-hover-bg-color);
-  --vk-button-outline-color: var(--vk-color-primary-light-5);
-  --vk-button-active-color: var(--vk-text-color-primary);
+.snow-button {
+  --snow-button-font-weight: var(--snow-font-weight-primary);
+  --snow-button-border-color: var(--snow-border-color);
+  --snow-button-bg-color: var(--snow-fill-color-blank);
+  --snow-button-text-color: var(--snow-text-color-regular);
+  --snow-button-disabled-text-color: var(--snow-disabled-text-color);
+  --snow-button-disabled-bg-color: var(--snow-fill-color-blank);
+  --snow-button-disabled-border-color: var(--snow-border-color-light);
+  --snow-button-hover-text-color: var(--snow-color-primary);
+  --snow-button-hover-bg-color: var(--snow-color-primary-light-9);
+  --snow-button-hover-border-color: var(--snow-color-primary-light-7);
+  --snow-button-active-text-color: var(--snow-button-hover-text-color);
+  --snow-button-active-border-color: var(--snow-color-primary);
+  --snow-button-active-bg-color: var(--snow-button-hover-bg-color);
+  --snow-button-outline-color: var(--snow-color-primary-light-5);
+  --snow-button-active-color: var(--snow-text-color-primary);
 }
-.vk-button {
+.snow-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -23,45 +23,45 @@
   height: 32px;
   white-space: nowrap;
   cursor: pointer;
-  color: var(--vk-button-text-color);
+  color: var(--snow-button-text-color);
   text-align: center;
   box-sizing: border-box;
   outline: none;
   transition: .1s;
-  font-weight: var(--vk-button-font-weight);
+  font-weight: var(--snow-button-font-weight);
   user-select: none;
   vertical-align: middle;
   -webkit-appearance: none;
-  background-color: var(--vk-button-bg-color);
-  border: var(--vk-border);
-  border-color: var(--vk-button-border-color);
+  background-color: var(--snow-button-bg-color);
+  border: var(--snow-border);
+  border-color: var(--snow-button-border-color);
   padding: 8px 15px;
-  font-size: var(--vk-font-size-base);
-  border-radius: var(--vk-border-radius-base);
+  font-size: var(--snow-font-size-base);
+  border-radius: var(--snow-border-radius-base);
   & + & {
     margin-left: 12px;
   }
   &:hover,
   &:focus {
-    color: var(--vk-button-hover-text-color);
-    border-color: var(--vk-button-hover-border-color);
-    background-color: var(--vk-button-hover-bg-color);
+    color: var(--snow-button-hover-text-color);
+    border-color: var(--snow-button-hover-border-color);
+    background-color: var(--snow-button-hover-bg-color);
     outline: none;    
   }
   &:active {
-    color: var(--vk-button-active-text-color);
-    border-color: var(--vk-button-active-border-color);
-    background-color: var(--vk-button-active-bg-color);
+    color: var(--snow-button-active-text-color);
+    border-color: var(--snow-button-active-border-color);
+    background-color: var(--snow-button-active-bg-color);
     outline: none;
   }
   &.is-plain {
-    --vk-button-hover-text-color: var(--vk-color-primary);
-    --vk-button-hover-bg-color: var(--vk-fill-color-blank);
-    --vk-button-hover-border-color: var(--vk-color-primary);    
+    --snow-button-hover-text-color: var(--snow-color-primary);
+    --snow-button-hover-bg-color: var(--snow-fill-color-blank);
+    --snow-button-hover-border-color: var(--snow-color-primary);    
   }
   /*round*/
   &.is-round {
-    border-radius: var(--vk-border-radius-round);
+    border-radius: var(--snow-border-radius-round);
   }
   /*circle*/
   &.is-circle {
@@ -72,54 +72,54 @@
   &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, 
   &[disabled], &[disabled]:hover, &[disabled]:focus 
   {
-    color: var(--vk-button-disabled-text-color);
+    color: var(--snow-button-disabled-text-color);
     cursor: not-allowed;
     background-image: none;
-    background-color: var(--vk-button-disabled-bg-color);
-    border-color: var(--vk-button-disabled-border-color);
+    background-color: var(--snow-button-disabled-bg-color);
+    border-color: var(--snow-button-disabled-border-color);
   }
-  [class*=vk-icon] + span {
+  [class*=snow-icon] + span {
     margin-left: 6px;
   }
 }
 @each $val in primary,success,warning,info,danger {
-  .vk-button--$(val) {
-    --vk-button-text-color: var(--vk-color-white);
-    --vk-button-bg-color: var(--vk-color-$(val));
-    --vk-button-border-color: var(--vk-color-$(val));
-    --vk-button-outline-color: var(--vk-color-$(val)-light-5);
-    --vk-button-active-color: var(--vk-color-$(val)-dark-2);
-    --vk-button-hover-text-color: var(--vk-color-white);
-    --vk-button-hover-bg-color: var(--vk-color-$(val)-light-3);
-    --vk-button-hover-border-color: var(--vk-color-$(val)-light-3);
-    --vk-button-active-bg-color: var(--vk-color-$(val)-dark-2);
-    --vk-button-active-border-color: var(--vk-color-$(val)-dark-2);
-    --vk-button-disabled-text-color: var(--vk-color-white);
-    --vk-button-disabled-bg-color: var(--vk-color-$(val)-light-5);
-    --vk-button-disabled-border-color: var(--vk-color-$(val)-light-5);
+  .snow-button--$(val) {
+    --snow-button-text-color: var(--snow-color-white);
+    --snow-button-bg-color: var(--snow-color-$(val));
+    --snow-button-border-color: var(--snow-color-$(val));
+    --snow-button-outline-color: var(--snow-color-$(val)-light-5);
+    --snow-button-active-color: var(--snow-color-$(val)-dark-2);
+    --snow-button-hover-text-color: var(--snow-color-white);
+    --snow-button-hover-bg-color: var(--snow-color-$(val)-light-3);
+    --snow-button-hover-border-color: var(--snow-color-$(val)-light-3);
+    --snow-button-active-bg-color: var(--snow-color-$(val)-dark-2);
+    --snow-button-active-border-color: var(--snow-color-$(val)-dark-2);
+    --snow-button-disabled-text-color: var(--snow-color-white);
+    --snow-button-disabled-bg-color: var(--snow-color-$(val)-light-5);
+    --snow-button-disabled-border-color: var(--snow-color-$(val)-light-5);
   }
-  .vk-button--$(val).is-plain {
-    --vk-button-text-color: var(--vk-color-$(val));
-    --vk-button-bg-color: var(--vk-color-$(val)-light-9);
-    --vk-button-border-color: var(--vk-color-$(val)-light-5);
-    --vk-button-hover-text-color: var(--vk-color-white);
-    --vk-button-hover-bg-color: var(--vk-color-$(val));
-    --vk-button-hover-border-color: var(--vk-color-$(val));
-    --vk-button-active-text-color: var(--vk-color-white);
+  .snow-button--$(val).is-plain {
+    --snow-button-text-color: var(--snow-color-$(val));
+    --snow-button-bg-color: var(--snow-color-$(val)-light-9);
+    --snow-button-border-color: var(--snow-color-$(val)-light-5);
+    --snow-button-hover-text-color: var(--snow-color-white);
+    --snow-button-hover-bg-color: var(--snow-color-$(val));
+    --snow-button-hover-border-color: var(--snow-color-$(val));
+    --snow-button-active-text-color: var(--snow-color-white);
   }
 }
-.vk-button--large {
-  --vk-button-size: 40px;
-  height: var(--vk-button-size);
+.snow-button--large {
+  --snow-button-size: 40px;
+  height: var(--snow-button-size);
   padding: 12px 19px;
-  font-size: var(--vk-font-size-base);
-  border-radius: var(--vk-border-radius-base);
+  font-size: var(--snow-font-size-base);
+  border-radius: var(--snow-border-radius-base);
 }
-.vk-button--small {
-  --vk-button-size: 24px;
-  height: var(--vk-button-size);
+.snow-button--small {
+  --snow-button-size: 24px;
+  height: var(--snow-button-size);
   padding: 5px 11px;
   font-size: 12px;
-  border-radius: calc(var(--vk-border-radius-base) - 1px);
+  border-radius: calc(var(--snow-border-radius-base) - 1px);
 }
 

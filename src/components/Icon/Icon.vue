@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-       <i class="vk-icon" :class="{[`vk-icon--${type}`] : type }" :style="customStyles" v-bind="$attrs">
+       <i class="snow-icon" :class="{[`snow-icon--${type}`] : type }" :style="customStyles" v-bind="$attrs">
         <font-awesome-icon v-bind="filteredProps"/>
        </i>      
  </template>
@@ -10,7 +10,7 @@ import { omit } from 'lodash-es';
   import type { IconProps } from './types'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'   
 defineOptions({
-  name: 'VkIcon',
+  name: 'SnowIcon',
   inheritAttrs: false
 })
 const props = defineProps<IconProps>()

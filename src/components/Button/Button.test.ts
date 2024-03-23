@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import Button from './Button.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import Icon from '../Icon/Icon.vue'
-import icon from '../Icon/icon.vue'
+import Icon from '../Icon/Icon.vue'
 
 describe('Button.vue', () => { 
   test('basic button', () => {
@@ -70,7 +70,7 @@ describe('Button.vue', () => {
       }
     })
     console.log(wrapper.html())
-    const iconElement = wrapper.findComponent(icon)
+    const iconElement = wrapper.findComponent(Icon)
     expect(iconElement.exists()).toBeTruthy()
     expect(iconElement.attributes('icon')).toBe('spinner')
     expect(wrapper.attributes('disabled')).toBeDefined()

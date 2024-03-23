@@ -1,7 +1,7 @@
 :root {
   /* colors */
-  --vk-color-white: #ffffff;
-  --vk-color-black: #000000;
+  --snow-color-white: #ffffff;
+  --snow-color-black: #000000;
   --colors: (
     primary: #409eff,
     success: #67c23a,
@@ -11,63 +11,63 @@
   );
 
   @each $val, $color in var(--colors) {
-    --vk-color-$(val): $(color);
+    --snow-color-$(val): $(color);
     @for $i from 3 to 9 by 2 {
-      --vk-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+      --snow-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
     }
-    --vk-color-$(val)-light-8: mix(#fff, $(color), .8);
-    --vk-color-$(val)-dark-2: mix(#000, $(color), .2);
+    --snow-color-$(val)-light-8: mix(#fff, $(color), .8);
+    --snow-color-$(val)-dark-2: mix(#000, $(color), .2);
   }
 
-  --vk-bg-color: #ffffff;
-  --vk-bg-color-page: #f2f3f5;
-  --vk-bg-color-overlay: #ffffff;
-  --vk-text-color-primary: #303133;
-  --vk-text-color-regular: #606266;
-  --vk-text-color-secondary: #909399;
-  --vk-text-color-placeholder: #a8abb2;
-  --vk-text-color-disabled: #c0c4cc;
-  --vk-border-color: #dcdfe6;
-  --vk-border-color-light: #e4e7ed;
-  --vk-border-color-lighter: #ebeef5;
-  --vk-border-color-extra-light: #f2f6fc;
-  --vk-border-color-dark: #d4d7de;
-  --vk-border-color-darker: #cdd0d6;
-  --vk-fill-color: #f0f2f5;
-  --vk-fill-color-light: #f5f7fa;
-  --vk-fill-color-lighter: #fafafa;
-  --vk-fill-color-extra-light: #fafcff;
-  --vk-fill-color-dark: #ebedf0;
-  --vk-fill-color-darker: #e6e8eb;
-  --vk-fill-color-blank: #ffffff;
+  --snow-bg-color: #ffffff;
+  --snow-bg-color-page: #f2f3f5;
+  --snow-bg-color-overlay: #ffffff;
+  --snow-text-color-primary: #303133;
+  --snow-text-color-regular: #606266;
+  --snow-text-color-secondary: #909399;
+  --snow-text-color-placeholder: #a8abb2;
+  --snow-text-color-disabled: #c0c4cc;
+  --snow-border-color: #dcdfe6;
+  --snow-border-color-light: #e4e7ed;
+  --snow-border-color-lighter: #ebeef5;
+  --snow-border-color-extra-light: #f2f6fc;
+  --snow-border-color-dark: #d4d7de;
+  --snow-border-color-darker: #cdd0d6;
+  --snow-fill-color: #f0f2f5;
+  --snow-fill-color-light: #f5f7fa;
+  --snow-fill-color-lighter: #fafafa;
+  --snow-fill-color-extra-light: #fafcff;
+  --snow-fill-color-dark: #ebedf0;
+  --snow-fill-color-darker: #e6e8eb;
+  --snow-fill-color-blank: #ffffff;
 
   /* border */
-  --vk-border-width: 1px;
-  --vk-border-style: solid;
-  --vk-border-color-hover: var(--vk-text-color-disabled);
-  --vk-border: var(--vk-border-width) var(--vk-border-style) var(--vk-border-color);
-  --vk-border-radius-base: 4px;
-  --vk-border-radius-small: 2px;
-  --vk-border-radius-round: 20px;
-  --vk-border-radius-circle: 100%;
+  --snow-border-width: 1px;
+  --snow-border-style: solid;
+  --snow-border-color-hover: var(--snow-text-color-disabled);
+  --snow-border: var(--snow-border-width) var(--snow-border-style) var(--snow-border-color);
+  --snow-border-radius-base: 4px;
+  --snow-border-radius-small: 2px;
+  --snow-border-radius-round: 20px;
+  --snow-border-radius-circle: 100%;
 
   /*font*/
-  --vk-font-size-extra-large: 20px;
-  --vk-font-size-large: 18px;
-  --vk-font-size-medium: 16px;
-  --vk-font-size-base: 14px;
-  --vk-font-size-small: 13px;
-  --vk-font-size-extra-small: 12px;
-  --vk-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
-  --vk-font-weight-primary: 500;
+  --snow-font-size-extra-large: 20px;
+  --snow-font-size-large: 18px;
+  --snow-font-size-medium: 16px;
+  --snow-font-size-base: 14px;
+  --snow-font-size-small: 13px;
+  --snow-font-size-extra-small: 12px;
+  --snow-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+  --snow-font-weight-primary: 500;
 
   /*disabled*/
-  --vk-disabled-bg-color: var(--vk-fill-color-light);
-  --vk-disabled-text-color: var(--vk-text-color-placeholder);
-  --vk-disabled-border-color: var(--vk-border-color-light);
+  --snow-disabled-bg-color: var(--snow-fill-color-light);
+  --snow-disabled-text-color: var(--snow-text-color-placeholder);
+  --snow-disabled-border-color: var(--snow-border-color-light);
   
   /*animation*/
-  --vk-transition-duration: .3s;
-  --vk-transition-duration-fast: .2s;
+  --snow-transition-duration: .3s;
+  --snow-transition-duration-fast: .2s;
 
 }

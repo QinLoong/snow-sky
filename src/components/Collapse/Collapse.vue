@@ -1,5 +1,5 @@
 <template>
-  <div class="vk-collapse">
+  <div class="snow-collapse">
     <slot></slot>
   </div>
 </template>
@@ -13,10 +13,10 @@ import {
 } from "./types";
 defineOptions({
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "VkCollaspe",
+  name: "SnowCollaspe",
 });
 const props = defineProps<CollapseProps>();
-const emit = defineEmits<CollaspeEmits>();
+const emits = defineEmits<CollaspeEmits>();
 watch(()=> props.modelValue,()=>{
     activeNames.value= props.modelValue
 })
@@ -27,18 +27,24 @@ if (props.accordion && activeNames.value.length > 1) {
   console.warn("accordion mode should only have one acitve item");
 }
 const handleItemClick = (item: NameType) => {
+  let _activeNames = [...activeNames.value ]
   if (props.accordion) {
-    activeNames.value[0] = activeNames.value[0] === item ? '' : item ;
+    _activeNames = [ activeNames.value[0] === item ? '' : item ]
+    activeNames.value = _activeNames
   } else {
-    const index = activeNames.value.indexOf(item);
+    const index = _activeNames.indexOf(item)
     if (index > -1) {
-      activeNames.value.splice(index, 1);
+      // 存在，删除数组对应的一项
+      _activeNames.splice(index, 1)
     } else {
-      activeNames.value.push(item);
+      // 不存在，插入对应的name
+      _activeNames.push(item)
     }
-    emit("update:modelValue", activeNames.value);
-    emit("change", activeNames.value);
+    activeNames.value = _activeNames
   }
+  emits('update:modelValue', _activeNames)
+  emits('change', _activeNames)
+  
 };
 provide(collapseContextKey, {
   activeNames,
