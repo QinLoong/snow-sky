@@ -1,6 +1,6 @@
 <template>
   <div
-    class="vk-dropdown"
+    class="snow-dropdown"
   >
   <Tooltip 
     :trigger="trigger" 
@@ -14,7 +14,7 @@
   >
     <slot />
     <template #content>
-      <ul class="vk-dropdown__menu">
+      <ul class="snow-dropdown__menu">
         <template v-for="item in menuOptions" :key="item.key">
           <li     
             v-if="item.divided"
@@ -22,13 +22,13 @@
             class="divided-placeholder"
           />
           <li
-            class="vk-dropdown__item"
+            class="snow-dropdown__item"
             @click="itemClick(item)"
             :class="{'is-disabled': item.disabled, 'is-divided': item.divided }"
             :id="`dropdown-item-${item.key}`"
           >
-            <!-- <RenderVnode :vNode="item.label"/> -->
-            {{ item.label }}
+            <RenderVnode :vNode="item.label"/>
+            <!-- {{ item.label }} -->
           </li>
         </template>
       </ul>
@@ -40,10 +40,10 @@
 import { ref } from 'vue'
 import type { DropdownProps, DropdownInstance, DropdownEmits, MenuOption } from './types'
 import Tooltip from '../Tooltip/Tooltip.vue'
-// import RenderVnode from '../Common/RenderVnode'
+import RenderVnode from '../Common/RenderVnode'
 import type { TooltipInstance } from '../Tooltip/types'
 defineOptions({
-  name: 'VkDropdown'
+  name: 'SnowDropdown'
 })
 const props = withDefaults(defineProps<DropdownProps>(), { hideAfterClick: true })
 const emits = defineEmits<DropdownEmits>()

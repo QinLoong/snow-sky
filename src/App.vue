@@ -11,6 +11,7 @@ import Icon from './components/Icon/Icon.vue';
 import type { ButtonInstance } from './components/Button/types';
 import { ref ,onMounted,h} from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { log } from 'console';
 
 let popperInstance : Instance | null = null
 
@@ -24,6 +25,10 @@ const options : MenuOption[] = [
   { key: 3, label: 'item3', divided: true },
   { key: 4, label: 'item4' }
 ]
+const inlineConsole= (...arg: any) =>{
+ console.log(arg);
+ 
+}
 onMounted(()=>{
   
   if(buttonRef.value){
@@ -44,7 +49,11 @@ onMounted(()=>{
 
 <template>
   <header>
-    <Dropdown trigger="hover" placement="right" :menu-options="options">
+    <Dropdown 
+    trigger="click" 
+    placement="right" 
+    :menu-options="options"
+    >
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
     <!-- <div style="width: 100;height: 50;background-color: #bfa;">移动这里会有惊喜 </div> -->
  
