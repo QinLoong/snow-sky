@@ -3,11 +3,13 @@ import { createPopper, right } from '@popperjs/core';
 import type { Instance } from '@popperjs/core';
 import Button from './components/Button/Button.vue';
 import Collapse from './components/Collapse/Collapse.vue';
-import Tooltip from'./components/Tooltips/Tooltip.vue';
+import Tooltip from'./components/Tooltip/Tooltip.vue';
+import Dropdown from './components/Dropdown/Dropdown.vue';
+import { MenuOption } from './components/Dropdown/types';
 import Item from './components/Collapse/CollapseItem.vue';
 import Icon from './components/Icon/Icon.vue';
 import type { ButtonInstance } from './components/Button/types';
-import { ref ,onMounted} from 'vue';
+import { ref ,onMounted,h} from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 let popperInstance : Instance | null = null
@@ -16,6 +18,12 @@ const buttonRef = ref<ButtonInstance | null>(null)
 const openedValue = ref(['a'])
 const overlayNode = ref<HTMLElement>()
 const triggerNode = ref<HTMLElement>()
+const options : MenuOption[] = [
+{ key: 1, label: h('b', 'this is bold') },
+  { key: 2, label: 'item2', disabled: true },
+  { key: 3, label: 'item3', divided: true },
+  { key: 4, label: 'item4' }
+]
 onMounted(()=>{
   
   if(buttonRef.value){
@@ -36,14 +44,11 @@ onMounted(()=>{
 
 <template>
   <header>
-    <Tooltip trigger="hover" placement="right">
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" ref="triggerNode"/>
-    <template #content>
-      <div>
-        sadaffsa
-      </div>
-    </template>
-    </Tooltip>
+    <Dropdown trigger="hover" placement="right" :menu-options="options">
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <!-- <div style="width: 100;height: 50;background-color: #bfa;">移动这里会有惊喜 </div> -->
+ 
+    </Dropdown>
   </header>
   <Icon icon="arrow-up" size="2xl"  type="danger" color="#0e7a0d" />
   <main>
@@ -118,3 +123,4 @@ header {
   }
 }
 </style>
+./components/Tooltip/Tooltip.vue

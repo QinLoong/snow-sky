@@ -37,7 +37,7 @@
         content: "";
         transform: rotate(45deg);
       }
-      &[data-popper-placement^='top'] > #arrow {
+      &[data-popper-placement^='top'] > #arrow {  
         bottom: -5px;
       }
       
@@ -74,7 +74,7 @@
     .fade-leave-active {
       transition: opacity var(--snow-transition-duration);
     }
-  
+
     .fade-enter-from,
     .fade-leave-to {
       opacity: 0;
