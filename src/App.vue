@@ -5,15 +5,18 @@ import Button from './components/Button/Button.vue';
 import Collapse from './components/Collapse/Collapse.vue';
 import Tooltip from'./components/Tooltip/Tooltip.vue';
 import Dropdown from './components/Dropdown/Dropdown.vue';
+import {createMessage} from './components/Message/method'
 import { MenuOption } from './components/Dropdown/types';
 import Item from './components/Collapse/CollapseItem.vue';
 import Icon from './components/Icon/Icon.vue';
 import type { ButtonInstance } from './components/Button/types';
-import { ref ,onMounted,h} from 'vue';
+import { ref ,onMounted,h,reactive} from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { log } from 'console';
 
 let popperInstance : Instance | null = null
+let val1 = reactive([{a:1,b:2}])
+// console.log(val1);
 
 const buttonRef = ref<ButtonInstance | null>(null)
 const openedValue = ref(['a'])
@@ -29,10 +32,23 @@ const inlineConsole= (...arg: any) =>{
  console.log(arg);
  
 }
+function useVal1(){
+  val1.push({a:5,b:6})
+ console.log(val1);
+ 
+}
+
+setTimeout(()=>{
+  val1.push({a:300,b:400})
+},10000)
 onMounted(()=>{
+  // useVal1()
+  createMessage({ message: 'hello world', duration: 0, showClose: true })
+  createMessage({ message: 'hello world again', duration: 0, type: 'success', showClose: true })
+  createMessage({ message: 'hello world three', duration: 0, type: 'danger', showClose: true })
   
   if(buttonRef.value){
-    console.log('buttonRef',buttonRef.value.ref);
+    // console.log('buttonRef',buttonRef.value.ref);
   }
  if(overlayNode.value&& triggerNode.value){
   popperInstance =  createPopper(triggerNode.value,overlayNode.value,{
@@ -40,7 +56,7 @@ onMounted(()=>{
   })
  }
   
-
+// watch(()=>val1)
   setTimeout(()=>{
     popperInstance?.setOptions({placement:'bottom'})
   },2000)
@@ -48,6 +64,7 @@ onMounted(()=>{
 </script>
 
 <template>
+  <div>{{ val1 }}</div>
   <header>
     <Dropdown 
     trigger="click" 

@@ -1,10 +1,12 @@
-import { render, h, shallowReactive } from 'vue'
+import { render, h, shallowReactive, reactive } from 'vue'
 import type { CreateMessageProps, MessageContext } from './types'
 import MessageConstructor from './Message.vue'
 import useZIndex from '../../hooks/useZIndex'
 let seed = 1
-const instances: MessageContext[] = shallowReactive([])
-export const createMessage = (props: CreateMessageProps) => {
+const instances: MessageContext[] = reactive([])
+// const instances: MessageContext[] = []
+
+export const createMessage = (props: CreateMessageProps) => { 
   const { nextZIndex } = useZIndex()
   const id = `message_${seed++}`
   const container = document.createElement('div')
@@ -30,7 +32,9 @@ export const createMessage = (props: CreateMessageProps) => {
     onDestory: destory
   }
   const vnode = h(MessageConstructor, newProps)
+  // console.log(MessageConstructor);
   render(vnode, container)
+  // console.log(MessageConstructor);
   //非空断言操作符
   document.body.appendChild(container.firstElementChild!)
   const vm = vnode.component!
@@ -42,6 +46,7 @@ export const createMessage = (props: CreateMessageProps) => {
     destory: manualDestroy
   }
   instances.push(instance)
+  // console.log(instances[instances.length-1]);
   return instance
 }
 
@@ -49,9 +54,13 @@ export const getLastInstance = () => {
   return instances.at(-1)
 }
 export const getLastBottomOffset = (id: string) => {
+
+    
   const idx = instances.findIndex(instance => instance.id === id)
-  console.log('idx', id, idx, instances.length)
+  console.log( id, idx, instances.length)
+  // console.log(instances[instances.length-1]);
   if (idx <= 0) {
+
     return 0
   } else {
     const prev = instances[idx - 1]
