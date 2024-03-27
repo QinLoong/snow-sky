@@ -6,7 +6,7 @@ export interface MessageProps {
   type?: 'success'| 'info'| 'warning'| 'danger';
   onDestory: () => void;
   id: string;
-  zIndex: number;
+  zIndex: number; 
   offset?: number;
   transitionName?: string;
 }

@@ -6,10 +6,10 @@
       @enter="updateHeight"
     >
     <div
-      class="vk-message"
+      class="snow-message"
       v-show="visible"
       :class="{
-        [`vk-message--${type}`]: type,
+        [`snow-message--${type}`]: type,
         'is-close': showClose
       }"
       role="alert"
@@ -18,12 +18,12 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
     > 
-      <div class="vk-message__content">
+      <div class="snow-message__content">
         <slot>
           <RenderVnode :vNode="message" v-if="message" />
         </slot>
       </div>
-      <div class="vk-message__close" v-if="showClose">
+      <div class="snow-message__close" v-if="showClose">
         <Icon @click.stop="visible = false" icon="xmark"/>
       </div>
     </div>
