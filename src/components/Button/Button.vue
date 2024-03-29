@@ -45,8 +45,5 @@ defineExpose({
 
 
 <style>
- .snow-button {
-  --main-bg-color: red;
-  background-color: var(--main-bg-color);
- }
+
 </style>

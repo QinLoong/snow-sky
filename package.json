@@ -28,8 +28,8 @@
     "@types/node": "^18.11.12",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
-    "@vitepress-demo-preview/component": "^2.3.0",
-    "@vitepress-demo-preview/plugin": "^1.1.9",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.3",
     "@vue-macros/volar": "^0.8.1",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/test-utils": "^2.4.5",
@@ -48,7 +48,7 @@
     "vite": "^4.0.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-vue-devtools": "^7.0.17",
-    "vitepress": "^1.0.0-alpha.65",
+    "vitepress": "^1.0.1",
     "vitest": "^0.29.8",
     "vue-tsc": "^1.0.12"
   }

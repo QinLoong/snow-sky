@@ -14,6 +14,7 @@ dist-ssr
 coverage
 *.local
 
+
 /cypress/videos/
 /cypress/screenshots/
 
@@ -28,3 +29,8 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+
+#Vitepress
+docs/.vitepress/cache
+docs/.vitepress/dist
