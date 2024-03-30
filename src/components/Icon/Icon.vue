@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
        <i class="snow-icon" :class="{[`snow-icon--${type}`] : type }" :style="customStyles" v-bind="$attrs">
         <font-awesome-icon v-bind="filteredProps"/>

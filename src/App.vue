@@ -9,6 +9,7 @@ import {createMessage} from './components/Message/method'
 import { MenuOption } from './components/Dropdown/types';
 import Item from './components/Collapse/CollapseItem.vue';
 import Icon from './components/Icon/Icon.vue';
+import Input from './components/Input/Input.vue';
 import type { ButtonInstance } from './components/Button/types';
 import { ref ,onMounted,h,reactive} from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -64,7 +65,7 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div>{{ val1 }}</div>
+ <Input model-value="123" placeholder="密码文本框，可以切换" type="textarea"></Input>
   <header>
     <Dropdown 
     trigger="click" 
