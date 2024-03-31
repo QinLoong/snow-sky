@@ -1,15 +1,15 @@
 <template>
     <div
-      class="vk-switch"
+      class="snow-switch"
       :class="{
-        [`vk-switch--${size}`]: size,
+        [`snow-switch--${size}`]: size,
         'is-disabled': disabled,
         'is-checked': checked
       }"
       @click="switchValue"
     >
       <input 
-        class="vk-swtich__input"
+        class="snow-swtich__input"
         type="checkbox"
         role="switch"
         ref="input"
@@ -17,13 +17,13 @@
         :disabled="disabled"
         @keydown.enter="switchValue"
       />
-      <div class="vk-switch__core">
-        <div class="vk-switch__core-inner">
-          <span v-if="activeText || inactiveText" class="vk-switch__core-inner-text">
+      <div class="snow-switch__core">
+        <div class="snow-switch__core-inner">
+          <span v-if="activeText || inactiveText" class="snow-switch__core-inner-text">
             {{checked ? activeText : inactiveText}}
           </span>
         </div>
-        <div class="vk-switch__core-action">
+        <div class="snow-switch__core-action">
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
     import type { SwtichProps, SwtichEmits } from './types'
     
     defineOptions({
-      name: 'VkSwtich',
+      name: 'SnowSwtich',
       inheritAttrs: false
     })
     const props = withDefaults(defineProps<SwtichProps>(), {

@@ -10,6 +10,7 @@ import { MenuOption } from './components/Dropdown/types';
 import Item from './components/Collapse/CollapseItem.vue';
 import Icon from './components/Icon/Icon.vue';
 import Input from './components/Input/Input.vue';
+import Switch from './components/Switch/Switch.vue'
 import type { ButtonInstance } from './components/Button/types';
 import { ref ,onMounted,h,reactive} from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -62,10 +63,11 @@ onMounted(()=>{
     popperInstance?.setOptions({placement:'bottom'})
   },2000)
 })
+const test = ref(false)
 </script>
 
 <template>
- <Input model-value="123" placeholder="密码文本框，可以切换" type="textarea"></Input>
+<Switch v-model="test" />
   <header>
     <Dropdown 
     trigger="click" 
