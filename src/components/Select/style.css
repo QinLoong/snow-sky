@@ -1,0 +1,74 @@
+.snow-select {
+    --snow-select-item-hover-bg-color: var(--snow-fill-color-light);
+    --snow-select-item-font-size: var(--snow-font-size-base);
+    --snow-select-item-font-color: var(--snow-text-color-regular);
+    --snow-select-item-selected-font-color: var(--snow-color-primary);
+    --snow-select-item-disabled-font-color: var(--snow-text-color-placeholder);
+    --snow-select-input-focus-border-color: var(--snow-color-primary);
+  }
+  
+  .snow-select {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
+    .snow-tooltip .snow-tooltip__popper {
+      padding: 0;
+    }
+    .snow-input.is-focus .snow-input__wrapper {
+      box-shadow: 0 0 0 1px var(--snow-select-input-focus-border-color) inset!important
+    }
+    .snow-input {
+      .header-angle {
+        transition: transform var(--snow-transition-duration);
+        &.is-active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  
+    .snow-input__inner {
+      cursor: pointer;
+    }
+    .snow-select__nodata, .snow-select__loading {
+      padding: 10px 0;
+      margin: 0;
+      text-align: center;
+      color: var(--snow-text-color-secondary);
+      font-size: var(--snow-select-font-size);
+    }
+    .snow-select__menu {
+      list-style: none;
+      margin: 6px 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .snow-select__menu-item { 
+      margin: 0;
+      font-size: var(--snow-select-item-font-size);
+      padding: 0 32px 0 20px;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--snow-select-item-font-color);
+      height: 34px;
+      line-height: 34px;
+      box-sizing: border-box;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--snow-select-item-hover-bg-color);
+      }
+      &.is-selected {
+        color: var(--snow-select-item-selected-font-color);
+        font-weight: 700;    
+      }
+      &.is-disabled {
+        color: var(--snow-select-item-disabled-font-color);
+        cursor: not-allowed;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+  
+    }
+  }

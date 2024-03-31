@@ -11,6 +11,7 @@ import Item from './components/Collapse/CollapseItem.vue';
 import Icon from './components/Icon/Icon.vue';
 import Input from './components/Input/Input.vue';
 import Switch from './components/Switch/Switch.vue'
+import Select from './components/Select/Select.vue'
 import type { ButtonInstance } from './components/Button/types';
 import { ref ,onMounted,h,reactive} from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -63,11 +64,18 @@ onMounted(()=>{
     popperInstance?.setOptions({placement:'bottom'})
   },2000)
 })
-const test = ref(false)
+const test = ref('1')
+const options2 = [
+  { label: 'hello', value: '1' },
+  { label: 'xyz', value: '2' },
+  { label: 'testing', value: '3' },
+  { label: 'check', value: '4', disabled: true }
+]
 </script>
 
 <template>
-<Switch v-model="test" />
+<Select v-model="test" placeholder="基础选择器，请选择" :options="options2" clearable/>
+  <span>{{test}}</span>
   <header>
     <Dropdown 
     trigger="click" 
