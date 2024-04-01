@@ -62,6 +62,9 @@
         color: var(--snow-select-item-selected-font-color);
         font-weight: 700;    
       }
+      &.is-highlighted {
+        background-color: var(--snow-select-item-hover-bg-color);  
+      }
       &.is-disabled {
         color: var(--snow-select-item-disabled-font-color);
         cursor: not-allowed;
