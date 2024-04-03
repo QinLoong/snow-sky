@@ -1,0 +1,50 @@
+.snow-form {
+    --snow-form-label-font-size: var(--snow-font-size-base)
+    --snow-form-content-font-size: var(--snow-font-size-base)
+}
+.snow-form-item{
+    display: flex;
+    margin-bottom: 18px;
+    .snow-form-item__label {
+        width: 150px;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 12px 0 0;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: flex-end;
+        font-size: var(--snow-form-label-font-size);
+        color: var(--snow-text-color-regular);
+    }
+    .snow-form-item__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex: 1;
+        line-height: 32px;
+        font-size: var(--snow-form-content-font-size);
+        min-width: 0;
+        position: relative;
+    }
+    .snow-form-item__error-msg {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding-top: 2px;
+        color: var(--snow-color-danger);
+        font-size: 12px;
+        line-height: 1;
+    }
+}
+
+.snow-form-item.is-error .snow-input__wrapper {
+    box-shadow: 0 0 0 1px var(--snow-color-danger) inset;
+}
+.snow-form-item.is-success .snow-input__wrapper {
+    box-shadow: 0 0 0 1px var(--snow-color-success) inset;
+}
+.snow-form-item.is-required > .snow-form-item__label::before {
+    content: "*";
+    color: var(--snow-color-danger);
+    margin-right: 4px;
+}

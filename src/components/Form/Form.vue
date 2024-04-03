@@ -1,7 +1,6 @@
 <template>
   <form class="snow-form">
     <slot />
-    <button @click.prevent="validate">validate all</button>
   </form>
 </template>
 <script setup lang="ts">
@@ -28,6 +27,14 @@ const removeField: FormContext["removeField"] = (field) => {
     fields.splice(fields.indexOf(field), 1);
   }
 };
+const resetFields = (keys: string[] = []) => {
+  const filterArr = keys.length > 0 ? fields.filter(field => keys.includes(field.prop)) : fields
+  filterArr.forEach(field => field.resetField())
+}
+const clearValidate = (keys: string[] = []) => {
+  const filterArr = keys.length > 0 ? fields.filter(field => keys.includes(field.prop)) : fields
+  filterArr.forEach(field => field.clearValidate())
+}
 const validate = async () =>{
   console.log('fields', fields);
   let validationErrors:ValidateFieldsError = {}
@@ -52,7 +59,9 @@ provide(formContextKey, {
   removeField,
 });
 defineExpose<FormInstance>({
-  validate
+  validate,
+  resetFields,
+  clearValidate
 })
 </script>
 <style scoped></style>

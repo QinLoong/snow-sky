@@ -9,8 +9,8 @@ import Button from '@/components/Button/Button.vue'
 import Switch from '@/components/Switch/Switch.vue'
 import Select from '@/components/Select/Select.vue'
 const model = reactive({
-  email: '',
-  password: '',
+  email: '123',
+  password: '12',
   confirmPwd: '',
   agreement: false,
   zone: '',
@@ -18,9 +18,11 @@ const model = reactive({
 })
 
 const rules = {
-    email: [{type: 'email', required: true, trigger: 'blur'},{type: 'string', required: true, trigger: 'input'}],
+    email: [{type: 'email', required: true, trigger: 'blur'}],
     password: [{ type: 'string',required: true, trigger: 'blur',min: 3, max: 5}],
-    test: [{type: 'string', required: true, trigger: 'blur'}],
+    confirmPwd: [{type: 'string', required: true, trigger: 'blur'},{
+       validator: (rule,value) => value === model.password, trigger: 'blur', message: '两个密码必须相同'
+    }],
 }
 
 const options = [
@@ -38,6 +40,7 @@ const submit = async () => {
   }
 }
 const reset = () => {
+  // formRef.value.clearValidate()
   formRef.value.resetFields()
 }
 </script>
@@ -53,7 +56,7 @@ const reset = () => {
     </FormItem>
     <FormItem prop="password" label="the password">
         <template #label="{label}">
-            <Button>{{ label }}</Button>
+            {{ label }}
         </template>
       <Input v-model="model.password" type="password" />
     </FormItem>
@@ -62,10 +65,13 @@ const reset = () => {
             <input type="text" v-model="model.test" @blur="validate">
         </template>
     </FormItem>
-    <div>
+    <FormItem prop="confirmPwd" label="confirm password">
+      <Input v-model="model.confirmPwd" type="password"/>
+    </FormItem>
+    <FormItem>
       <Button  type="primary" @click.prevent="submit">Submit</Button>
-      <Button >Reset</Button>
-    </div>
+      <Button @click.prevent="reset">Reset</Button>
+    </FormItem>
   </Form>
 
   <p>

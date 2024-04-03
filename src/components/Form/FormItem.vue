@@ -5,6 +5,7 @@
       'is-error': validateStatus.state === 'error',
       'is-success': validateStatus.state === 'success',
       'is-loading': validateStatus.loading,
+      'is-required': isRequired
     }"
   >
     <label class="snow-form-item__label" prop="email">
@@ -35,17 +36,19 @@ import {
 import Schema from "async-validator";
 import { isNil } from "lodash-es";
 import { formContextKey, formItemContextKey } from "./types";
-import { FormItemProps, FromValidateFailure, FormItemContext } from "./types";
+import { FormItemProps, FromValidateFailure, FormItemContext ,ValidateStatusProp ,FormItemInstance } from "./types";
 defineOptions({
   name: "SnowFormItem",
 });
 const props = defineProps<FormItemProps>();
 const formContext = inject(formContextKey);
-const validateStatus = reactive({
+const validateStatus: ValidateStatusProp = reactive({
   state: "init",
   errorMsg: "",
   loading: false,
 });
+//保存初始值
+let initialValue:any = null 
 const innerValue = computed(() => {
   const model = formContext?.model;
   if (model && props.prop && !isNil(model[props.prop])) {
@@ -74,7 +77,10 @@ const getTriggerRules = (trigger?: string) => {
     return [];
   }
 };
-const validate = (trigger?: string) => {
+const isRequired = computed(() => {
+  return itemRules.value.some(rule => rule.required)
+}) 
+const validate = async(trigger?: string) => {
   const modelName = props.prop;
   const triggeredRules = getTriggerRules(trigger);
 
@@ -105,19 +111,40 @@ const validate = (trigger?: string) => {
       });
   }
 };
+const clearValidate = () => {
+  validateStatus.state = 'init',
+  validateStatus.errorMsg = '',
+  validateStatus.loading = false
+}
+const resetField = () => {
+  clearValidate()
+  const model = formContext?.model;
+  if (model && props.prop && !isNil(model[props.prop])) {
+     model[props.prop] = initialValue
+  }
+}
 const context: FormItemContext = {
   validate,
   prop: props.prop || "",
+  clearValidate,
+  resetField
 };
 provide(formItemContextKey, context);
 
 onMounted(() => {
   if (props.prop) {
     formContext?.addField(context);
+    initialValue = innerValue.value
   }
 });
 onUnmounted(() => {
   formContext?.removeField(context);
 });
+defineExpose<FormItemInstance>({
+  validateStatus,
+  validate,
+  resetField,
+  clearValidate
+})
 </script>
 <style scoped></style>
