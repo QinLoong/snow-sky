@@ -29,8 +29,8 @@ describe('Collapse.vue', () => {
       },
       attachTo: document.body
     })
-    headers = wrapper.findAll('.vk-collapse-item__header')
-    contents = wrapper.findAll('.vk-collapse-item__wrapper')
+    headers = wrapper.findAll(".snow-collapse-item__header");
+    contents = wrapper.findAll(".snow-collapse-item__wrapper");
     firstHeader = headers[0]
     secondHeader = headers[1]
     disabledHeader = headers[2]

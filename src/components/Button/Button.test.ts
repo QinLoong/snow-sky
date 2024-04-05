@@ -16,7 +16,7 @@ describe('Button.vue', () => {
       }
     })
     console.log(wrapper.html())
-    expect(wrapper.classes()).toContain('vk-button--primary')
+    expect(wrapper.classes()).toContain("snow-button--primary");
     // slot
     // get, find
     expect(wrapper.get('button').text()).toBe('button')

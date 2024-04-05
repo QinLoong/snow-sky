@@ -21,18 +21,18 @@ describe('Tooltip.vue', () => {
     // 静态测试
     const triggerArea = wrapper.find('#trigger')
     expect(triggerArea.exists()).toBeTruthy()
-    expect(wrapper.find('.vk-tooltip__popper').exists()).toBeFalsy()
-    console.log('before', wrapper.html())
+    expect(wrapper.find(".snow-tooltip__popper").exists()).toBeFalsy();
+    console.log("before", wrapper.html());
     // 测试点击行为
-    triggerArea.trigger('click')
-    await vi.runAllTimers()
-    expect(wrapper.find('.vk-tooltip__popper').exists()).toBeTruthy()
-    expect(wrapper.get('.vk-tooltip__popper').text()).toBe('hello tooltip')
-    expect(onVisibleChange).toHaveBeenCalledWith(true)
-    console.log('after', wrapper.html())
-    wrapper.get('#outside').trigger('click')
-    await vi.runAllTimers()
-    expect(wrapper.find('.vk-tooltip__popper').exists()).toBeFalsy()
+    triggerArea.trigger("click");
+    await vi.runAllTimers();
+    expect(wrapper.find(".snow-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.get(".snow-tooltip__popper").text()).toBe("hello tooltip");
+    expect(onVisibleChange).toHaveBeenCalledWith(true);
+    console.log("after", wrapper.html());
+    wrapper.get("#outside").trigger("click");
+    await vi.runAllTimers();
+    expect(wrapper.find(".snow-tooltip__popper").exists()).toBeFalsy();
     expect(onVisibleChange).toHaveBeenLastCalledWith(false)
   })
 })

@@ -27,8 +27,8 @@ describe('Collapse.vue', () => {
       },
       attachTo: document.body
     })
-    const headers = wrapper.findAll('.vk-collapse-item__header')
-    const contents = wrapper.findAll('.vk-collapse-item__wrapper')
+    const headers = wrapper.findAll(".snow-collapse-item__header");
+    const contents = wrapper.findAll(".snow-collapse-item__wrapper");
 
     // 长度
     expect(headers.length).toBe(3)
