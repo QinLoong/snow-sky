@@ -5,6 +5,7 @@
     --snow-popover-padding: 12px;
     --snow-popover-border-radius: 4px;
     display: inline-block;
+    padding: 12px;
   }
   
   .snow-tooltip {

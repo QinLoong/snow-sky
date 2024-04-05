@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/valid-template-root -->
 <template>
   <div
     class="snow-tooltip"
@@ -60,7 +59,7 @@
         {
           name: 'offset',
           options: {
-            offset: [0, 4],
+            offset: [0, 9],
           },
         }
       ],
