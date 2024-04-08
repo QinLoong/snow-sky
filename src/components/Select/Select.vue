@@ -111,7 +111,7 @@ const states = reactive<SelectStates>({
   highlightIndex: -1,
 });
 watch(()=> props.modelValue, (newValue)=>{
-   states.inputValue = findOption(newValue) ? findOption(newValue).label : ""
+   states.inputValue = findOption(newValue) ? findOption(newValue)?.label! : ""
 })
 const isDropdownShow = ref(false);
 const popperOptions: any = {

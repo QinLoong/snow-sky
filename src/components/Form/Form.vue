@@ -4,15 +4,11 @@
   </form>
 </template>
 <script setup lang="ts">
-import { ValidateFieldsError } from "async-validator";
+import type { ValidateFieldsError } from "async-validator";
 import { provide } from "vue";
+import type { FormContext, FormItemContext, FormProps, FromValidateFailure, FormInstance} from "./types";
 import {
-  FormContext,
-  FormItemContext,
-  FormProps,
-  FromValidateFailure,
-  formContextKey,
-  FormInstance
+  formContextKey
 } from "./types";
 defineOptions({
   name: "SnowFrom",

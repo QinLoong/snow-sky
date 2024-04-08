@@ -29,7 +29,8 @@
 
 <script setup lang="ts">
 import Icon from "../Icon/Icon.vue";
-import { CollapseItemProps, collapseContextKey } from "./types";
+import type { CollapseItemProps } from './types'
+import { collapseContextKey } from './types'
 import { inject, computed } from "vue";
 defineOptions({
   name: "SnowCollapseItem",
@@ -72,8 +73,3 @@ const transitionEvents: Record<string,(el:HTMLElement) => void> ={
 }
 </script>
 
-<style scoped>
-.snow-collapse-item__header {
-  font-size: 30px;
-}
-</style>

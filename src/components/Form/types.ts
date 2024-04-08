@@ -1,5 +1,9 @@
 import type { InjectionKey } from "vue";
-import { RuleItem, ValidateError, ValidateFieldsError } from "async-validator";
+import type {
+  RuleItem,
+  ValidateError,
+  ValidateFieldsError,
+} from "async-validator";
 
 export interface FormItemProps {
   label: string;

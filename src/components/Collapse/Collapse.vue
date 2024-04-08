@@ -5,18 +5,14 @@
 </template>
 <script setup lang="ts">
 import { ref, provide ,watch} from "vue";
-import {
-  NameType,
-  collapseContextKey,
-  CollapseProps,
-  CollaspeEmits,
-} from "./types";
+import type { NameType, CollapseProps, CollapseEmits } from './types'
+import { collapseContextKey } from './types'
 defineOptions({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "SnowCollaspe",
 });
 const props = defineProps<CollapseProps>();
-const emits = defineEmits<CollaspeEmits>();
+const emits = defineEmits<CollapseEmits>();
 watch(()=> props.modelValue,()=>{
     activeNames.value= props.modelValue
 })

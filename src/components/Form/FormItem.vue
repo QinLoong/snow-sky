@@ -36,7 +36,7 @@ import {
 import Schema from "async-validator";
 import { isNil } from "lodash-es";
 import { formContextKey, formItemContextKey } from "./types";
-import { FormItemProps, FromValidateFailure, FormItemContext ,ValidateStatusProp ,FormItemInstance } from "./types";
+import type { FormItemProps, FromValidateFailure, FormItemContext ,ValidateStatusProp ,FormItemInstance } from "./types";
 defineOptions({
   name: "SnowFormItem",
 });

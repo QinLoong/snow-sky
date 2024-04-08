@@ -39,6 +39,8 @@ description: Button 组件的文档
 
 <preview path="../demo/Button/Size.vue" title="不同大小的按钮" description="Button 组件的不同大小的按钮"></preview>
 
+##
+# API
 ## Button Attributes
 
 | Name              | Description                                                             | Type                                                                            | Default |
