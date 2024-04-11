@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,a6 as t}from"./chunks/framework.DeBpyR9V.js";const u=JSON.parse('{"title":"安装","description":"","frontmatter":{},"headers":[],"relativePath":"guide/install.md","filePath":"guide/install.md"}'),i={name:"guide/install.md"},n=t("",9),l=[n];function o(h,r,d,p,c,_){return s(),e("div",null,l)}const m=a(i,[["render",o]]);export{u as __pageData,m as default};
