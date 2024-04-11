@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Switch from '@/components/Switch/Switch.vue'
-const test = ref(false)
+const test = ref(true)
 </script>
 <template>
   <div class="switch-size-container">
@@ -14,7 +14,7 @@ const test = ref(false)
 .switch-size-container {
   display: flex;
   align-items: center;
-  .vk-switch {
+  .snow-switch {
     margin-right: 10px;
   }
 }

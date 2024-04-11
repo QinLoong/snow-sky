@@ -8,7 +8,9 @@ export interface SwtichProps {
   inactiveValue?: SwitchValueType;
   name?: string;
   id?: string;
-  size?: 'small' | 'large';
+  size?: "small" | "large";
+  onColor?: string;
+  offColor?: string;
 }
 
 export interface SwtichEmits {

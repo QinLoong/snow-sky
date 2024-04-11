@@ -1,18 +1,18 @@
 <script setup>
-import { ref } from 'vue'
-import Select from '@/components/Select/Select.vue'
-const test = ref('')
+import { ref } from "vue";
+import Select from "@/components/Select/Select.vue";
+const test = ref("");
 const options2 = [
-  { label: 'hello', value: '1' },
-  { label: 'xyz', value: '2' },
-  { label: 'testing', value: '3' },
-  { label: 'check', value: '4', disabled: true }
-]
+  { label: "Option1", value: "1" },
+  { label: "Option2", value: "2" },
+  { label: "Option3", value: "3" },
+  { label: "Option4", value: "4", disabled: true },
+];
 </script>
 <template>
-  <Select 
-    v-model="test" 
-    placeholder="可以过滤的选择器，请输入" 
+  <Select
+    v-model="test"
+    placeholder="可以过滤的选择器，请输入"
     :options="options2"
     filterable
   />

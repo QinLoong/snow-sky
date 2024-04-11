@@ -3,10 +3,10 @@ import { h } from 'vue'
 import { createMessage } from '@/components/Message/method'
 import Button from '@/components/Button/Button.vue'
 const open = () => {
-  createMessage({ message: 'hello world' })
+  createMessage({ message: 'hello world' ,type:'success' })
 }
 const open2 = () => {
-  createMessage({ message: h('b', 'this is bold') })
+  createMessage({ message: h('b', 'this is bold'),type: 'danger' })
 }
 </script>
 <template>
