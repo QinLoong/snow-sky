@@ -1,12 +1,17 @@
 import { defineConfig } from "vitepress";
 import { fileURLToPath, URL } from "node:url";
+import minimist from "minimist";
 import {
   containerPreview,
   componentPreview,
 } from "@vitepress-demo-preview/plugin";
 
+const argv = minimist(process.argv.slice(2));
+const build = argv.build || false;
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: build ? "/snow-sky/" : "/",
   title: "Snow-Sky",
   description: "A VitePress Site",
   head: [["link", { rel: "icon", href: "/snowflake.png" }]],
