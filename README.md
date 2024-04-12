@@ -14,6 +14,7 @@ Snow-Sky 为 Web 应用提供了丰富的基础 UI 组件，我们还将持续�
 ````shell
 npm i @qinloong/snow-sky --save
 ````
+
 ## 用法
 
 #### 全局使用
