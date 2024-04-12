@@ -1,39 +1,63 @@
 # snow-sky
 
-This template should help get you started developing with Vue 3 in Vite.
+![示例图片](./docs/public/snowflake.png)
 
-## Recommended IDE Setup
+###  snow-sky
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Snow-Sky 为 Web 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。
 
-## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+# 快速开始
 
-## Customize configuration
+## 安装组件库
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+````shell
+npm i @qinloong/snow-sky --save
+````
+## 用法
 
-## Project Setup
+#### 全局使用
 
-```sh
-npm install
-```
+```` javascript
+// 引入所有组件
+import snowsky from '@qinloong/snow-sky'
+// 引入样式
+import '@qinloong/snow-sky/dist/style.css'
 
-### Compile and Hot-Reload for Development
+import App from './App.vue'
+// 全局使用
+createApp(App).use(snowsky).mount('#app')
+````
 
-```sh
-npm run dev
-```
+```` vue
+<template>
+  <SnowButton>我是 Button</SnowButton>
+</template>
+````
 
-### Type-Check, Compile and Minify for Production
 
-```sh
-npm run build
-```
+#### 单个导入
 
-### Lint with [ESLint](https://eslint.org/)
+Snow-Sky 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
 
-```sh
-npm run lint
-```
+```` vue
+<template>
+  <Button>我是 Button</Button>
+</template>
+<script>
+  import { Button } from '@qinloong/snow-sky'
+  export default {
+    components: { Button },
+  }
+</script>
+````
+
+## 📃 文档地址
+
+https://qinloong.github.io/snow-sky/
+
+## ✨ 亮点
+
+* 亮点1 🎉：“新”，使用最新最全技术：Vue3 + Typescript4， Vite，Vitest， Vitepress，Vue-test-utils2，Rollup, Postcss。
+* 亮点2 🌹：单元测试，被常年忽略但是非常重要的内容，使用最新的 Vitest，Vue-test-utils2 完成单元测试。
+* 亮点3 🔥: 包括Message - Select - Form 这种高难度高复杂组件等多个常用组件
