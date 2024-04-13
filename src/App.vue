@@ -6,7 +6,7 @@ import Collapse from './components/Collapse/Collapse.vue';
 import Tooltip from'./components/Tooltip/Tooltip.vue';
 import Dropdown from './components/Dropdown/Dropdown.vue';
 import {createMessage} from './components/Message/method'
-// import { MenuOption } from './components/Dropdown/types';
+import { MenuOption } from './components/Dropdown/types';
 import Item from './components/Collapse/CollapseItem.vue';
 import Icon from './components/Icon/Icon.vue';
 import Input from './components/Input/Input.vue';
@@ -24,12 +24,12 @@ const buttonRef = ref<ButtonInstance | null>(null)
 const openedValue = ref(['a'])
 const overlayNode = ref<HTMLElement>()
 const triggerNode = ref<HTMLElement>()
-// const options : MenuOption[] = [
-// { key: 1, label: h('b', 'this is bold') },
-//   { key: 2, label: 'item2', disabled: true },
-//   { key: 3, label: 'item3', divided: true },
-//   { key: 4, label: 'item4' }
-// ]
+const options : MenuOption[] = [
+{ key: 1, label: h('b', 'this is bold') },
+  { key: 2, label: 'item2', disabled: true },
+  { key: 3, label: 'item3', divided: true },
+  { key: 4, label: 'item4' }
+]
 const inlineConsole= (...arg: any) =>{
  console.log(arg);
  
@@ -76,13 +76,13 @@ const options2 = [
 <!-- <Select v-model="test" placeholder="基础选择器，请选择" :options="options2" clearable/> -->
   <span>{{test}}</span>
   <header>
-    <!-- <Dropdown 
+    <Dropdown 
     trigger="click" 
     placement="right" 
     :menu-options="options"
     >
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    </Dropdown> -->
+    </Dropdown>
   </header>
   <Icon icon="arrow-up" size="2xl"  type="danger" color="#0e7a0d" />
   <main>
