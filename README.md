@@ -55,7 +55,7 @@ Snow-Sky 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
 
 ## 📃 文档地址
 
-https://qinloong.github.io/snow-sky/
+<https://qinloong.github.io/snow-sky/>
 
 ## ✨ 亮点
 
