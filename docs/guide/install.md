@@ -2,7 +2,7 @@
 
 ## 环境支持
 
-由于 Vue 3 不再支持 IE11，Fly Design 也不再支持 IE11 浏览器。
+由于 Vue 3 不再支持 IE11，Snow-Sky 也不再支持 IE11 浏览器。
 
 ## 版本
 Snow-Sky 0.8.0

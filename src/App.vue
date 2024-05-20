@@ -6,7 +6,7 @@ import Collapse from './components/Collapse/Collapse.vue';
 import Tooltip from'./components/Tooltip/Tooltip.vue';
 import Dropdown from './components/Dropdown/Dropdown.vue';
 import {createMessage} from './components/Message/method'
-import { MenuOption } from './components/Dropdown/types';
+import type { MenuOption } from './components/Dropdown/types';
 import Item from './components/Collapse/CollapseItem.vue';
 import Icon from './components/Icon/Icon.vue';
 import Input from './components/Input/Input.vue';
